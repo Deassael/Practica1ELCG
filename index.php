@@ -46,7 +46,7 @@
                                         </tr>
                                         <tr>
                                             <td align="center">
-                                                <button type="button" class="btn btn-primary" name="btn_entrar" id="btn_entrar"></button>
+                                                <button type="button" class="btn btn-primary" name="btn_entrar" id="btn_entrar">Iniciar Sesión</button>
                                                 <div class="mensaje"></div>
                                             </td>    
                                         </tr>    
