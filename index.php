@@ -57,7 +57,35 @@
                     </div>    
                 </div>    
             </div>    
-        </div>    
+        </div>
+        <script>
+        			function enviar_datos(u,p){
+        				$.post($("#frm_login").attr("action"),{
+        						txt_usuario: u,
+        						txt_password: p
+        					}).done(function(datos){
+        						//console.log(datos.data.url);
+        						window.location.replace(datos.data.url+"?token="+datos.data.token)
+        					}).fail(function(xhr, status, error){
+        						$(".mensaje").html(xhr.responseJSON.mensaje);
+        					});
+        			}
+        			$(document).ready(function(){
+        				$("#btn_entrar").click(function(){
+        					enviar_datos($("#txt_usuario").val(),$("#txt_password").val());
+        				});
+        				$("#txt_usuario").keypress(function(event){
+        					if(event.which == 13){
+        						enviar_datos($("#txt_usuario").val(),$("#txt_password").val());
+        					}
+        				});
+        				$("#txt_password").keypress(function(event){
+        					if(event.which == 13){
+        						enviar_datos($("#txt_usuario").val(),$("#txt_password").val());
+        					}
+        				});
+        			});
+        </script>
     </body>
 </html>
 

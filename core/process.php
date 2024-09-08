@@ -23,7 +23,7 @@ if(in_array($_SERVER['HTTP_HOST'], $hosts_aceptados))
                 if($txt_usuario == $usuario_correcto)
                 {
                     // El usuario digitao es el correcto
-                    if(txt_password == $password_correcto)
+                    if($txt_password == $password_correcto)
                     {
                         // La contraseña es correcta
                         $ruta = "welcome.php";
@@ -102,9 +102,9 @@ $arreglo_respuesta = array(
     "count"=>1
 );
 
-header("HTTP/1.1".$codigo_estado." ".$texto_estado);
+header("HTTP/1.1 ".$codigo_estado." ".$texto_estado);
 header("Content-type: application/json");
-echo($arreglo_respuesta);
+echo(json_encode($arreglo_respuesta));
 
 
 ?>
